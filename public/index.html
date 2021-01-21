@@ -6,20 +6,55 @@
   <script src="bundle.js" async></script>
 </head>
 <body>
-  <div data-controller="commits" 
+  <sidebar class="sidebar">
+    <ul class="navigation">
+      <li><a href="#section1">Order Cream</a></li>
+      <li><a href="#section2">Load Commits</a></li>
+    </ul>
+  </sidebar>
+  <main class="content">
+    <section id="section1">
+      <h1>Order An Ice Cream Cone</h1>
+        <form data-controller="selector">
+          <ul>
+            <li data-target="selector.option" 
+                data-action="click->selector#selectOption">
+              Chocolate
+            </li>
+            <li data-target="selector.option" 
+                data-action="click->selector#selectOption">
+              Vanilla
+            </li>
+            <li data-target="selector.option" 
+                data-action="click->selector#selectOption">
+              Strawberry
+            </li>
+          </ul>
+          You're order is <input id='option' value="Please Select An Option Above" disabled 
+          data-target="selector.input">
+          <br>
+          <input type="submit" value="Finish Order" disabled data-target="selector.submit" />
+        </form>
+    </section>
+
+    <section id="section2">
+      <div data-controller="commits" 
       data-commits-url="https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha=">
-      <h1>Latest Rails Commit</h1>
+        <h1>Latest Vuejs Commit</h1>
+        <h3><i>Rebuild Github Commits Example in VueJS by Stimulas</i></h3>
 
-      <input data-action="change->commits#selectBranch" data-target="commits#option"
-              type="radio" name="branch" value="master" checked>
-      <label for="master">master</label>
+        <input data-action="change->commits#selectBranch" data-target="commits#option"
+                type="radio" name="branch" value="master" checked>
+        <label for="master">master</label>
 
-      <input data-action="change->commits#selectBranch" data-target="commits#option"
-              type="radio" name="branch" value="dev">
-      <label for="master">dev</label>
+        <input data-action="change->commits#selectBranch" data-target="commits#option"
+                type="radio" name="branch" value="dev">
+        <label for="master">dev</label>
 
-      <p>vuejs/vue@<span data-target="commits.branch"></span></p>
-      <ul data-target="commits.commits"></ul>
-  </div>
+        <p>vuejs/vue@<span data-target="commits.branch"></span></p>
+        <ul data-target="commits.commits"></ul>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
