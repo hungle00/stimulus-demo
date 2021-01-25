@@ -10,6 +10,7 @@
     <ul class="navigation">
       <li><a href="#section1">Order Cream</a></li>
       <li><a href="#section2">Load Commits</a></li>
+      <li><a href="#section3">Filtering</a></li>
     </ul>
   </sidebar>
   <main class="content">
@@ -54,6 +55,23 @@
         <p>vuejs/vue@<span data-target="commits.branch"></span></p>
         <ul data-target="commits.commits"></ul>
       </div>
+    </section>
+
+    <section id="section3">
+      <h1>Filtering</h1>
+      <form data-controller="filtering">
+        <input type="text" placeholder="Filter ..." data-target="filtering.filter"
+                                                  data-action="input->filtering#showOrHideOption" />
+        <div id="result" data-target="filtering.result"></div>
+        <select id="source" multiple="multiple" data-target="filtering.select">
+          <option value="0">chess</option>
+          <option value="1">swimming</option>
+          <option value="2">ping pong</option>
+          <option value="3">running</option>
+          <option value="4">canoying</option>
+          <option value="5">surfing</option>
+        </select>
+      </form>
     </section>
   </main>
 </body>
