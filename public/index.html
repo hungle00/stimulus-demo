@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="main.css">
+  <title>Stimulus Gallery</title>
   <script src="bundle.js" async></script>
 </head>
 <body>
@@ -11,6 +12,7 @@
       <li><a href="#section1">Order Cream</a></li>
       <li><a href="#section2">Load Commits</a></li>
       <li><a href="#section3">Filtering</a></li>
+      <li><a href="#section4">Type-ahead Search</a></li>
     </ul>
   </sidebar>
   <main class="content">
@@ -42,7 +44,7 @@
       <div data-controller="commits" 
       data-commits-url="https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha=">
         <h1>Latest Vuejs Commit</h1>
-        <h3><i>Rebuild Github Commits Example in VueJS by Stimulas</i></h3>
+        <h3><i>Rebuild Github Commits Example in VueJS by Stimulus</i></h3>
 
         <input data-action="change->commits#selectBranch" data-target="commits#option"
                 type="radio" name="branch" value="master" checked>
@@ -72,6 +74,25 @@
           <option value="5">surfing</option>
         </select>
       </form>
+    </section>
+
+    <section id="section4">
+      <div class="search-container" data-controller="searchform">
+        <div class="search-form" >
+          <h1>Search City</h1>
+          <form action="results" method="get">
+            <label for="search">Search the System</label>
+            <input type="text" placeholder="Search ... "
+              data-target="searchform.input"
+              data-action="input->searchform#autocomplete" />
+          </form>
+          <ul data-target="searchform.results">
+            <li class="searching">
+              <span class="result-secondary">Searching....</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 </body>
