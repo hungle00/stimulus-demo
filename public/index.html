@@ -9,14 +9,38 @@
 <body>
   <sidebar class="sidebar">
     <ul class="navigation">
-      <li><a href="#section1">Order Cream</a></li>
-      <li><a href="#section2">Load Commits</a></li>
-      <li><a href="#section3">Filtering</a></li>
-      <li><a href="#section4">Type-ahead Search</a></li>
+      <a href="https://stimulus.hotwire.dev/"><h2>Stimulus Gallery</h2></a>
+      <li><a href="#section1">Toggle</a></li>
+      <li><a href="#section2">Order Cream</a></li>
+      <li><a href="#section3">Load Commits</a></li>
+      <li><a href="#section4">Filtering</a></li>
+      <li><a href="#section5">Type-ahead Search</a></li>
     </ul>
+    <footer style="padding-top: 20%; text-align: center;">
+      <p>Author: Le Hung</p>
+      <a href="https://github.com/hungle00/stimulus-demo">Github</a>
+    </footer>
   </sidebar>
   <main class="content">
     <section id="section1">
+      <h1>Simple toogle</h1>
+      <div data-controller="toggle">
+        <div
+          class="tab hover"
+          data-action="click->toggle#toggle"
+          data-target="toggle.content">
+          Hello
+        </div>
+        <div
+          class="tab"
+          data-action="click->toggle#toggle"
+          data-target="toggle.content">
+          Hi
+        </div>
+      </div>
+    </section>
+
+    <section id="section2">
       <h1>Order An Ice Cream Cone</h1>
         <form data-controller="selector">
           <ul>
@@ -40,7 +64,7 @@
         </form>
     </section>
 
-    <section id="section2">
+    <section id="section3">
       <div data-controller="commits" 
       data-commits-url="https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha=">
         <h1>Latest Vuejs Commit</h1>
@@ -59,7 +83,7 @@
       </div>
     </section>
 
-    <section id="section3">
+    <section id="section4">
       <h1>Filtering</h1>
       <form data-controller="filtering">
         <input type="text" placeholder="Filter ..." data-target="filtering.filter"
@@ -76,10 +100,11 @@
       </form>
     </section>
 
-    <section id="section4">
+    <section id="section5">
+      <h1>Search City</h1>
+      <b>Type-ahead search is same like <a href="#section4">Filtering</a> but get remote data</b>
       <div class="search-container" data-controller="searchform">
         <div class="search-form" >
-          <h1>Search City</h1>
           <form action="results" method="get">
             <label for="search">Search the System</label>
             <input type="text" placeholder="Search ... "

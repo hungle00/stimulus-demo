@@ -44,6 +44,13 @@ li {
   display: none;
 }
 
+.hover {
+  background-color: #bada55;
+}
+.showing {
+  display: block;
+}
+
 input[type="text"] {
   width: 30%;
   padding: 10px;
