@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <title>Stimulus Gallery</title>
   <script src="bundle.js" async></script>
 </head>
@@ -23,19 +24,16 @@
   </sidebar>
   <main class="content">
     <section id="section1">
-      <h1>Simple toogle</h1>
-      <div data-controller="toggle">
-        <div
-          class="tab hover"
-          data-action="click->toggle#toggle"
-          data-target="toggle.content">
-          Hello
-        </div>
-        <div
-          class="tab"
-          data-action="click->toggle#toggle"
-          data-target="toggle.content">
-          Hi
+      <h1>Modal form</h1>
+      <div id="app" data-controller="demo">
+        <button data-action="click->demo#launchDemo" class="btn btn-primary">Launch Demo</button>
+        <div class="modal" data-controller="modal" data-target="demo.modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <button data-action="click->modal#close" class="btn btn-primary">Close</button>
+              This is a modal
+            </div>
+          </div>
         </div>
       </div>
     </section>
