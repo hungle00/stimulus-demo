@@ -7,15 +7,18 @@
   <title>Stimulus Gallery</title>
   <script src="bundle.js" async></script>
 </head>
-<body>
+<body class="wrapper">
   <sidebar class="sidebar">
-    <ul class="navigation">
+    <div class="sidebar-header">
       <a href="https://stimulus.hotwire.dev/"><h2>Stimulus Gallery</h2></a>
+    </div>
+    <ul class="navigation">
       <li><a href="#section1">Toggle</a></li>
       <li><a href="#section2">Order Cream</a></li>
       <li><a href="#section3">Load Commits</a></li>
       <li><a href="#section4">Filtering</a></li>
       <li><a href="#section5">Type-ahead Search</a></li>
+      <li><a href="#section6">Drag and Drop</a></li>
     </ul>
     <footer style="padding-top: 20%; text-align: center;">
       <p>Author: Le Hung</p>
@@ -26,7 +29,7 @@
     <section id="section1">
       <h1>Modal form</h1>
       <div id="app" data-controller="demo">
-        <button data-action="click->demo#launchDemo" class="btn btn-primary">Launch Demo</button>
+        <button data-action="click->demo#launchDemo" class="btn">Launch Demo</button>
         <div class="modal" data-controller="modal" data-target="demo.modal">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -58,7 +61,7 @@
           You're order is <input id='option' value="Please Select An Option Above" disabled 
           data-target="selector.input">
           <br>
-          <input type="submit" value="Finish Order" disabled data-target="selector.submit" />
+          <input type="submit" value="Finish Order" disabled data-target="selector.submit" class="btn" />
         </form>
     </section>
 
@@ -116,6 +119,17 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <section id="section6">
+      <h1>Drag and Drop</h1>
+      <ol data-controller="drag-item"
+          data-action="dragstart->drag-item#dragstart dragover->drag-item#dragover dragenter->drag-item#dragenter drop->drag-item#drop dragend->drag-item#dragend" >
+        <li draggable="true" data-todo-id="1" class="hover-overlay ripple">Take out trash</li>
+        <li draggable="true" data-todo-id="2">Check Email</li>
+        <li draggable="true" data-todo-id="3">Subscribe to mailing list</li>
+        <li draggable="true" data-todo-id="4">Research Stimulus</li>
+      </ol>
     </section>
   </main>
 </body>

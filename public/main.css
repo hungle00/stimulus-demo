@@ -15,6 +15,10 @@ body {
   overflow: hidden;
 }
 
+.sidebar-header {
+  padding: 10px;
+}
+
 .content {
   display: block;
   position: absolute;

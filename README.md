@@ -13,4 +13,8 @@ https://vuejs.org/v2/examples/commits.html
 
 * 5. Type-ahead search with remote data
 
+* 6. Drag and drop
+
+*Example 3 & 6 I rebuild from [guide](https://onrails.blog/)*
+
 ### View demo on [Heroku](https://lmh-stimulus.herokuapp.com/)
